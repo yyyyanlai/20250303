@@ -2,6 +2,7 @@ let input;
 let slider;
 let button;
 let dropdown;
+let iframe;
 let isBouncing = false;
 let offsets = [];
 
@@ -37,6 +38,12 @@ function setup() {
   for (let i = 0; i < 1000; i++) {
     offsets.push(random(0, 1000));
   }
+
+  // 創建 iframe
+  iframe = createElement('iframe');
+  iframe.position(100, 100);
+  iframe.size(windowWidth - 200, windowHeight - 200);
+  iframe.hide(); // 初始隱藏
 }
 
 function draw() {
@@ -63,10 +70,13 @@ function toggleBounce() {
 function handleDropdownChange() {
   let selected = dropdown.value();
   if (selected === '教育科技學系') {
-    window.open('https://www.et.tku.edu.tw/', '_blank');
+    iframe.attribute('src', 'https://www.et.tku.edu.tw/');
+    iframe.show();
   } else if (selected === '第三週作品') {
-    window.open('https://yyyyanlai.github.io/20250303/', '_blank');
+    iframe.attribute('src', 'https://yyyyanlai.github.io/20250303/');
+    iframe.show();
   } else if (selected === '第三週講義') {
-    window.open('https://hackmd.io/@cXBDz1qJRdCeONnktZ5UqA/HyWumtziyg', '_blank');
+    iframe.attribute('src', 'https://hackmd.io/@cXBDz1qJRdCeONnktZ5UqA/HyWumtziyg');
+    iframe.show();
   }
 }
