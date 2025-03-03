@@ -28,9 +28,9 @@ function setup() {
   dropdown.size(100, 30); // 放大下拉式選單
   //下拉式選單文字大小
   dropdown.style('font-size', '16px');
-  dropdown.option('淡江大學');
   dropdown.option('教育科技學系');
-  dropdown.option('第三週');
+  dropdown.option('第三週作品');
+  dropdown.option('第三週講義');
   dropdown.changed(handleDropdownChange);
 
   // 初始化每個文字的偏移量
@@ -62,11 +62,11 @@ function toggleBounce() {
 
 function handleDropdownChange() {
   let selected = dropdown.value();
-  if (selected === '淡江大學') {
-    window.open('https://www.tku.edu.tw/', '_blank');
-  } else if (selected === '教育科技學系') {
+  if (selected === '教育科技學系') {
     window.open('https://www.et.tku.edu.tw/', '_blank');
-  } else if (selected === '第三週') {
+  } else if (selected === '第三週作品') {
+    window.open('https://yyyyanlai.github.io/20250303/', '_blank');
+  } else if (selected === '第三週講義') {
     window.open('https://hackmd.io/@cXBDz1qJRdCeONnktZ5UqA/HyWumtziyg', '_blank');
   }
 }
